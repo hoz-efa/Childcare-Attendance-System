@@ -432,7 +432,3 @@ def download_monthly_report():
         download_name=filename,
         mimetype=
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
