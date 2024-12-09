@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+<title>Student Profile</title>
+</head>
+<body class="container mt-4">
+<h2>Student Profile</h2>
+<table class="table table-bordered">
+  <tr><th>First Name</th><td>{{ student.first_name }}</td></tr>
+  <tr><th>Last Name</th><td>{{ student.last_name }}</td></tr>
+  <tr><th>Parent Name</th><td>{{ student.parent_name }}</td></tr>
+  <tr><th>Parent Email</th><td>{{ student.parent_email }}</td></tr>
+  <tr><th>Emergency Contact Name</th><td>{{ student.emergency_contact_name }}</td></tr>
+  <tr><th>Emergency Contact Phone</th><td>{{ student.emergency_contact_phone }}</td></tr>
+  <tr><th>Pickup Person Name</th><td>{{ student.pickup_person_name }}</td></tr>
+  <tr><th>Pickup Person Phone</th><td>{{ student.pickup_person_phone }}</td></tr>
+  <tr><th>Allergies</th><td>{{ student.allergies }}</td></tr>
+</table>
+<a href="{{ url_for('teacher_dashboard') }}" class="btn btn-secondary">Back</a>
+</body>
+</html>

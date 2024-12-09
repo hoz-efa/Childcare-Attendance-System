@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+<title>View Teacher Profile</title>
+</head>
+<body class="container mt-4">
+<h2>Teacher Profile</h2>
+<table class="table table-bordered">
+  <tr><th>Email</th><td>{{ teacher.email }}</td></tr>
+  <tr><th>First Name</th><td>{{ teacher.first_name }}</td></tr>
+  <tr><th>Last Name</th><td>{{ teacher.last_name }}</td></tr>
+  <tr><th>Phone</th><td>{{ teacher.phone }}</td></tr>
+  <tr><th>Role</th><td>{{ teacher.role }}</td></tr>
+</table>
+<a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Back</a>
+</body>
+</html>

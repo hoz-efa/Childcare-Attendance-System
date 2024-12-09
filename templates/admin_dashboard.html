@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+<title>Admin Dashboard</title>
+</head>
+<body class="container mt-4">
+<h1>Admin Dashboard</h1>
+<a href="{{ url_for('logout') }}" class="btn btn-secondary mb-3">Logout</a>
+<h2>Teachers</h2>
+<a href="{{ url_for('add_teacher') }}" class="btn btn-primary mb-3">Add Teacher</a>
+<table class="table table-bordered table-responsive">
+  <tr>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Actions</th>
+  </tr>
+  {% for t in teachers %}
+  <tr>
+    <td><a href="{{ url_for('admin_view_teacher_profile', teacher_id=t.id) }}">{{ t.email }}</a></td>
+    <td>{{ t.first_name }} {{ t.last_name }}</td>
+    <td>{{ t.phone }}</td>
+    <td>
+      {% if t.email != 'admin@mail.com' %}
+      <form method="POST" action="{{ url_for('delete_teacher', teacher_id=t.id) }}" style="display:inline-block">
+        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+      </form>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
